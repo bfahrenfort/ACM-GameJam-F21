@@ -1,24 +1,3 @@
-using Platformer.Core;
-using Platformer.Mechanics;
-using Platformer.Model;
-using UnityEngine;
-
-namespace Platformer.Gameplay
-{
-    /// <summary>
-    /// Fired when a player collides with a token.
-    /// </summary>
-    /// <typeparam name="PlayerCollision"></typeparam>
-    public class PlayerTokenCollision : Simulation.Event<PlayerTokenCollision>
-    {
-        public PlayerController player;
-        public TokenInstance token;
-
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-
-        public override void Execute()
-        {
-            AudioSource.PlayClipAtPoint(token.tokenCollectAudio, token.transform.position);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ed40da6adbe3cd309309c481e97d37999299576e0f97564c88231185507f5cc5
+size 663

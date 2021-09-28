@@ -1,22 +1,3 @@
-using Platformer.Core;
-using Platformer.Mechanics;
-using Platformer.Model;
-
-namespace Platformer.Gameplay
-{
-    /// <summary>
-    /// Fired when a player enters a trigger with a DeathZone component.
-    /// </summary>
-    /// <typeparam name="PlayerEnteredDeathZone"></typeparam>
-    public class PlayerEnteredDeathZone : Simulation.Event<PlayerEnteredDeathZone>
-    {
-        public DeathZone deathzone;
-
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-
-        public override void Execute()
-        {
-            Simulation.Schedule<PlayerDeath>(0);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:77c48063792f41ea58e4a0ec2d8485356cca5f9a320df8a228f8a4cd82c257c1
+size 594

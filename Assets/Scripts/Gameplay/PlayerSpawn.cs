@@ -1,30 +1,3 @@
-using Platformer.Core;
-using Platformer.Mechanics;
-using Platformer.Model;
-
-namespace Platformer.Gameplay
-{
-    /// <summary>
-    /// Fired when the player is spawned after dying.
-    /// </summary>
-    public class PlayerSpawn : Simulation.Event<PlayerSpawn>
-    {
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-
-        public override void Execute()
-        {
-            var player = model.player;
-            player.collider2d.enabled = true;
-            player.controlEnabled = false;
-            if (player.audioSource && player.respawnAudio)
-                player.audioSource.PlayOneShot(player.respawnAudio);
-            player.health.Increment();
-            player.Teleport(model.spawnPoint.transform.position);
-            player.jumpState = PlayerController.JumpState.Grounded;
-            player.animator.SetBool("dead", false);
-            model.virtualCamera.m_Follow = player.transform;
-            model.virtualCamera.m_LookAt = player.transform;
-            Simulation.Schedule<EnablePlayerInput>(2f);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:cef7a61a13c55fc401d68c123004281f2474e9c441e38e2dd917306d2433a8a6
+size 1064

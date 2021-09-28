@@ -1,21 +1,3 @@
-using Platformer.Core;
-using Platformer.Mechanics;
-using static Platformer.Core.Simulation;
-
-namespace Platformer.Gameplay
-{
-    /// <summary>
-    /// Fired when the player health reaches 0. This usually would result in a 
-    /// PlayerDeath event.
-    /// </summary>
-    /// <typeparam name="HealthIsZero"></typeparam>
-    public class HealthIsZero : Simulation.Event<HealthIsZero>
-    {
-        public Health health;
-
-        public override void Execute()
-        {
-            Schedule<PlayerDeath>();
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0f30b4c3d7ad900132f66e68dc55442b9e76ffe81192cf246bd8cc5264c8638c
+size 524

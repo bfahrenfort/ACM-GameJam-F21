@@ -1,25 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Platformer.Gameplay;
-using UnityEngine;
-using static Platformer.Core.Simulation;
-
-namespace Platformer.Mechanics
-{
-    /// <summary>
-    /// DeathZone components mark a collider which will schedule a
-    /// PlayerEnteredDeathZone event when the player enters the trigger.
-    /// </summary>
-    public class DeathZone : MonoBehaviour
-    {
-        void OnTriggerEnter2D(Collider2D collider)
-        {
-            var p = collider.gameObject.GetComponent<PlayerController>();
-            if (p != null)
-            {
-                var ev = Schedule<PlayerEnteredDeathZone>();
-                ev.deathzone = this;
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6bd8ab8a5e40617ee57e8e7dc0a3d6d688eaafe20139c74358297d2ea5c926b3
+size 715

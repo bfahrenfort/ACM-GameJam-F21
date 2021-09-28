@@ -1,21 +1,3 @@
-﻿using UnityEngine;
-using Platformer.Mechanics;
-
-public class PlatformerJumpPad : MonoBehaviour
-{
-    public float verticalVelocity;
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        var rb = other.attachedRigidbody;
-        if (rb == null) return;
-        var player = rb.GetComponent<PlayerController>();
-        if (player == null) return;
-        AddVelocity(player);
-    }
-
-    void AddVelocity(PlayerController player)
-    {
-        player.velocity.y = verticalVelocity;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d22f10441eeb26b1420db5fe3b76d3b549e445e70775d6074f2dc8408b08d535
+size 496

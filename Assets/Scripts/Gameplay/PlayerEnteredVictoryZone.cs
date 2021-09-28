@@ -1,24 +1,3 @@
-using Platformer.Core;
-using Platformer.Mechanics;
-using Platformer.Model;
-
-namespace Platformer.Gameplay
-{
-
-    /// <summary>
-    /// This event is triggered when the player character enters a trigger with a VictoryZone component.
-    /// </summary>
-    /// <typeparam name="PlayerEnteredVictoryZone"></typeparam>
-    public class PlayerEnteredVictoryZone : Simulation.Event<PlayerEnteredVictoryZone>
-    {
-        public VictoryZone victoryZone;
-
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-
-        public override void Execute()
-        {
-            model.player.animator.SetTrigger("victory");
-            model.player.controlEnabled = false;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f94cf4c8bd40f93a0902c415f4d21ad2fe0e847ee3f3483d523b427eb5665217
+size 694

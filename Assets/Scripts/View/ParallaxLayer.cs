@@ -1,29 +1,3 @@
-using UnityEngine;
-
-namespace Platformer.View
-{
-    /// <summary>
-    /// Used to move a transform relative to the main camera position with a scale factor applied.
-    /// This is used to implement parallax scrolling effects on different branches of gameobjects.
-    /// </summary>
-    public class ParallaxLayer : MonoBehaviour
-    {
-        /// <summary>
-        /// Movement of the layer is scaled by this value.
-        /// </summary>
-        public Vector3 movementScale = Vector3.one;
-
-        Transform _camera;
-
-        void Awake()
-        {
-            _camera = Camera.main.transform;
-        }
-
-        void LateUpdate()
-        {
-            transform.position = Vector3.Scale(_camera.position, movementScale);
-        }
-
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d1c1ccb716e346529495d6c997a8abbe1a78cb8f97a88278cfe4534bab3a5424
+size 743
