@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d445711ac0089567b5bed67373ccadf53db004696ac4b86588e6524f01e4c750
-size 607
+using Platformer.Core;
+using Platformer.Mechanics;
+
+namespace Platformer.Gameplay
+{
+    /// <summary>
+    /// Fired when the health component on an enemy has a hitpoint value of  0.
+    /// </summary>
+    /// <typeparam name="EnemyDeath"></typeparam>
+    public class EnemyDeath : Simulation.Event<EnemyDeath>
+    {
+        public EnemyController enemy;
+
+        public override void Execute()
+        {
+            enemy._collider.enabled = false;
+            enemy.control.enabled = false;
+            if (enemy._audio && enemy.ouch)
+                enemy._audio.PlayOneShot(enemy.ouch);
+        }
+    }
+}

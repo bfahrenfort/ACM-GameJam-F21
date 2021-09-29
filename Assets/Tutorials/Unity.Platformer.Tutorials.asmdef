@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6531d2d8415cd0325cc11b7fe0465fae3cdbd5e0854f624428a36dc359e5f430
-size 458
+{
+    "name": "Unity.Platformer.Tutorials",
+    "references": [
+        "GUID:149cad238efed4f53ac932b1e9555356",
+        "GUID:dca86c3434c38674a865b8fad7a81c91"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

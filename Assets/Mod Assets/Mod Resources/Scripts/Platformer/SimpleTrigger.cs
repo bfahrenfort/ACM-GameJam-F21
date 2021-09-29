@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:98dfde13e4697dc77a83182557e362f58026b691b68d522c61431e2d81237f68
-size 506
+﻿using UnityEngine;
+using UnityEngine.Events;
+
+public class SimpleTrigger : MonoBehaviour
+{
+
+    public Rigidbody2D triggerBody; 
+    public UnityEvent onTriggerEnter;
+
+
+    void OnTriggerEnter2D(Collider2D other){
+        //do not trigger if there's no trigger target object
+        if (triggerBody == null) return;
+
+        //only trigger if the triggerBody matches
+        var hitRb = other.attachedRigidbody;
+        if (hitRb == triggerBody){
+            onTriggerEnter.Invoke();
+        }
+    }
+
+}
