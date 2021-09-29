@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81fd1fcff9190c08998e8de9c293c41f93b82e46669f596a260ddde0a7810aad
-size 670
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Platformer.UI
+{
+    /// <summary>
+    /// A simple controller for switching between UI panels.
+    /// </summary>
+    public class MainUIController : MonoBehaviour
+    {
+        public GameObject[] panels;
+
+        public void SetActivePanel(int index)
+        {
+            for (var i = 0; i < panels.Length; i++)
+            {
+                var active = i == index;
+                var g = panels[i];
+                if (g.activeSelf != active) g.SetActive(active);
+            }
+        }
+
+        void OnEnable()
+        {
+            SetActivePanel(0);
+        }
+    }
+}

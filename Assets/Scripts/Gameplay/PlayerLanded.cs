@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:69eb81c9c12efe799ee054fc09f78f5aa6cbda98aaa68140a896d75ec55c650e
-size 418
+using Platformer.Core;
+using Platformer.Mechanics;
+
+namespace Platformer.Gameplay
+{
+    /// <summary>
+    /// Fired when the player character lands after being airborne.
+    /// </summary>
+    /// <typeparam name="PlayerLanded"></typeparam>
+    public class PlayerLanded : Simulation.Event<PlayerLanded>
+    {
+        public PlayerController player;
+
+        public override void Execute()
+        {
+
+        }
+    }
+}

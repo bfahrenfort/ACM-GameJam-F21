@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:96da3d97110888c9421f947a85fc7a57510227c5b6dd08e4dd230df6ae0a9a56
-size 969
+using UnityEngine;
+
+namespace Platformer.Core
+{
+    /// <summary>
+    /// Fuzzy provides methods for using values +- an amount of random deviation, or fuzz.
+    /// </summary>
+    static class Fuzzy
+    {
+        public static bool ValueLessThan(float value, float test, float fuzz = 0.1f)
+        {
+            var delta = value - test;
+            return delta < 0 ? true : Random.value > delta / (fuzz * test);
+        }
+
+        public static bool ValueGreaterThan(float value, float test, float fuzz = 0.1f)
+        {
+            var delta = value - test;
+            return delta < 0 ? Random.value > -1 * delta / (fuzz * test) : true;
+        }
+
+        public static bool ValueNear(float value, float test, float fuzz = 0.1f)
+        {
+            return Mathf.Abs(1f - (value / test)) < fuzz;
+        }
+
+        public static float Value(float value, float fuzz = 0.1f)
+        {
+            return value + value * Random.Range(-fuzz, +fuzz);
+        }
+    }
+}

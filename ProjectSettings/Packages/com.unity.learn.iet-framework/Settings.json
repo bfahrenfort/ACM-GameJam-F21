@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f897910bad7f9e9aa848fbcfc7c893d4886c9d21666b690d9aa8ddcfb6e9c732
-size 176
+{
+    "m_Name": "Settings",
+    "m_Path": "ProjectSettings/Packages/com.unity.learn.iet-framework/Settings.json",
+    "m_Dictionary": {
+        "m_DictionaryValues": []
+    }
+}
