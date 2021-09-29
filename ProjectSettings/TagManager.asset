@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - TutorialRequirement
+  - Left
+  - Right
+  - Top
+  - Bottom
+  - VCam
   layers:
   - Default
   - TransparentFX
