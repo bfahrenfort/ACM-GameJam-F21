@@ -58,7 +58,7 @@ MonoBehaviour:
   audioSource: {fileID: 8509783501685719824}
   maxSpeed: 5
   moveSpeed: 30
-  jumpTakeOffSpeed: 4
+  jumpTakeOffSpeed: 5
   jumpState: 0
   collider2d: {fileID: 1824045667}
   facingRight: 1
@@ -67,6 +67,7 @@ MonoBehaviour:
   timer: 60
   pauseMenu: {fileID: 4068165445069903345, guid: a9db9aa2ad8e97744997c012f00694aa,
     type: 3}
+  menuShown: 0
 --- !u!212 &212064061491315838
 SpriteRenderer:
   m_ObjectHideFlags: 0
