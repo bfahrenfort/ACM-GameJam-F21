@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Custom;
+using Unity.VisualScripting;
 
 namespace Custom
 {
@@ -16,7 +17,8 @@ namespace Custom
         private void Awake()
         {
             CurrentRoom = ListRooms[0];
-            Instantiate(CurrentRoom);
+            Room mainRoom = Instantiate(CurrentRoom);
+            mainRoom.AddComponent<MainConsequence>();
         }
 
         // Start is called before the first frame update
