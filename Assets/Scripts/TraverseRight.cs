@@ -46,7 +46,10 @@ namespace Custom
                 }
             }
         }
-
+        public void resetRoom()
+        {
+            created = false;
+        }
         void Platform()
         {
             var room = Instantiate(map.listRooms[1], new Vector3(16, 2, 0), Quaternion.Euler(0f, 180f, 0f));

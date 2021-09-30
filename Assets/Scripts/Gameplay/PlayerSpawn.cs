@@ -1,6 +1,7 @@
 using Platformer.Core;
 using Platformer.Mechanics;
 using Platformer.Model;
+using UnityEngine;
 
 namespace Platformer.Gameplay
 {
@@ -25,6 +26,12 @@ namespace Platformer.Gameplay
             model.virtualCamera.m_Follow = player.transform;
             model.virtualCamera.m_LookAt = player.transform;
             Simulation.Schedule<EnablePlayerInput>(2f);
+            GameObject.Destroy(GameObject.FindGameObjectWithTag("EnemyRoom"));
+            GameObject.Destroy(GameObject.FindGameObjectWithTag("PlatformRoom"));
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<Custom.MapManager>().destroyRooms();
+            GameObject.FindGameObjectWithTag("Left").GetComponent<Custom.TraverseLeft>().resetRoom();
+            GameObject.FindGameObjectWithTag("Right").GetComponent<Custom.TraverseRight>().resetRoom();
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<KeyController>().resetKey();
         }
     }
 }

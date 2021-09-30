@@ -3,13 +3,14 @@ using UnityEngine;
 
 namespace Custom
 {
-    public class PlatformConsequence : MonoBehaviour, IConsequence
+    public class PlatformConsequence : IConsequence
     {
-        public void Execute(PlayerController controller)
+        public override void ExecuteConsequence(PlayerController controller)
         {
-            foreach (Transform child in GameObject.FindWithTag("PlatformRoom").transform)
+            foreach (Transform child in GameObject.FindGameObjectWithTag("PlatformRoom").transform)
             {
-                child.GetComponent<BlockController>().RandomizeBlock();
+                if (child.CompareTag("MovingBlock"))
+                    child.GetComponent<BlockController>().RandomizeBlock();
             }
         }
     }

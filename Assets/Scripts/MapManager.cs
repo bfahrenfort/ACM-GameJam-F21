@@ -16,6 +16,12 @@ namespace Custom
 
         public int NumRooms() { return listRooms.Count;}
 
+        public void destroyRooms()
+        {
+            roomCodes.Clear();
+            roomCodes.Insert(0, "MainRoom");
+        }
+
         private void Awake()
         {
             // Put the main room at the origin

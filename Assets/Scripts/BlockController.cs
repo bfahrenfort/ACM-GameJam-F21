@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class BlockController : MonoBehaviour
 {
+    private float timer = 1.0f;
     public void RandomizeBlock()
     {
-        var random = new System.Random();
-        transform.position = new Vector2(transform.position.x, ((float)random.Next(-400, 500)) / 100);
+        if(timer < 0.0f)
+        {
+            timer = 1.0f;
+            var random = new System.Random();
+            this.transform.position = new Vector2(this.transform.position.x, ((float)random.Next(-400, 500)) / 100);
+        }
+        timer -= Time.deltaTime;
     }
 }

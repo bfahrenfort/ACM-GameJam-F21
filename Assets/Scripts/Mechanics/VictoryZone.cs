@@ -12,10 +12,15 @@ namespace Platformer.Mechanics
         void OnTriggerEnter2D(Collider2D collider)
         {
             var p = collider.gameObject.GetComponent<PlayerController>();
+            var key = GameObject.FindGameObjectWithTag("GameController").GetComponent<KeyController>();
             if (p != null)
             {
-                var ev = Schedule<PlayerEnteredVictoryZone>();
-                ev.victoryZone = this;
+                if (key.AllKeysCollected())
+                {
+                    var ev = Schedule<PlayerEnteredVictoryZone>();
+                    Schedule<ExitGame>(2);
+                    ev.victoryZone = this;
+                }
             }
         }
     }

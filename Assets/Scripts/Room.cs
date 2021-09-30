@@ -22,9 +22,8 @@ namespace Custom
             Player = GameObject.FindGameObjectWithTag("Player");
             controller = Player.GetComponent<PlayerController>();
             //GameObject.FindGameObjectWithTag("VCam").GetComponent<Cinemachine.CinemachineConfiner>().m_BoundingShape2D = this.GetComponentInChildren<PolygonCollider2D>();
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().model.spawnPoint = 
-                this.GetComponentInChildren<SpawnPoint>().transform; // This is dumb
-            consequence = GetComponent<IConsequence>();
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().model.spawnPoint = this.GetComponentInChildren<SpawnPoint>().transform; // This is dumb
+            //consequence = this.GetComponent<IConsequence>();
         }
 
         // Update is called once per frame
@@ -32,7 +31,7 @@ namespace Custom
         {
             if(controller.paused && inside.IsTouching(Player.GetComponent<Collider2D>()))
             {
-                consequence.Execute(controller);
+                this.GetComponent<IConsequence>().ExecuteConsequence(controller);
             }
         }
     }

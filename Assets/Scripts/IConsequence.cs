@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Custom
 {
-    public interface IConsequence
+    public abstract class IConsequence : MonoBehaviour
     {
-        public abstract void Execute(PlayerController controller);
+        public abstract void ExecuteConsequence(PlayerController controller);
     }
 }

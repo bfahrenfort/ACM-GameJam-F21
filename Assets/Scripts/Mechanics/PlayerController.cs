@@ -65,6 +65,8 @@ namespace Platformer.Mechanics
             if (timer < 0)
             {
                 // Kill player
+                Schedule<PlayerDeath>();
+                timer = 60;
             }
             
             // Handle pausing
@@ -95,6 +97,7 @@ namespace Platformer.Mechanics
                 velocity.x = 0;
                 move.y = 0;
                 velocity.y = 0;
+                timer = 60;
 
                 // If first tick since paused, show the menu
                 if (!menuShown)

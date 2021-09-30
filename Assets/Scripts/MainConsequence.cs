@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Custom
 {
-    public class MainConsequence : MonoBehaviour, IConsequence
+    public class MainConsequence : IConsequence
     {
-        public void Execute(PlayerController controller)
+        public override void ExecuteConsequence(PlayerController controller)
         {
             controller.timer = 60;
         }

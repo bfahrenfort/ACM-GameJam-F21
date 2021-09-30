@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 1153443521}
   - component: {fileID: 1153443520}
   - component: {fileID: 1153443523}
+  - component: {fileID: 1153443524}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -448,6 +449,19 @@ MonoBehaviour:
   - {fileID: 423703985721730660, guid: 7bbb969f8dbc4254ba5085ad643d95c6, type: 3}
   - {fileID: 6262544259707649966, guid: 2acc1e42b8b20c44a9e90fbba1e35ad6, type: 3}
   roomCodes: []
+--- !u!114 &1153443524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153443519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2a3a62a75b8384d97d3e80e893e7c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberOfKeys: 2
 --- !u!1 &1281283303
 GameObject:
   m_ObjectHideFlags: 3
@@ -599,7 +613,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7255521, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

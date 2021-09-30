@@ -3,16 +3,16 @@ using UnityEngine;
 
 namespace Custom
 {
-    public class EnemyConsequence : MonoBehaviour, IConsequence
+    public class EnemyConsequence : IConsequence
     {
         private bool triggered = false;
         private float timer = 5; // 5s cooldown
-        public void Execute(PlayerController player)
+        public override void ExecuteConsequence(PlayerController player)
         {
             if (triggered) // Trigger warning
             {
                 triggered = false;
-                foreach (Transform child in GameObject.FindWithTag("EnemyRoom").transform)
+                foreach (Transform child in GameObject.FindGameObjectWithTag("EnemyRoom").transform)
                 {
                     if (child.CompareTag("Enemy"))
                         child.GetComponent<EnemyController>().speed *= 2;
