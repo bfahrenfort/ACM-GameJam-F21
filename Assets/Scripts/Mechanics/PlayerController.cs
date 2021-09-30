@@ -75,13 +75,10 @@ namespace Platformer.Mechanics
             }
             if (timer < 0)
             {
-<<<<<<< HEAD
                 // Kill player
                 Schedule<PlayerDeath>();
                 timer = 60;
-=======
                 Schedule<PlayerDeath>();
->>>>>>> a11ed29193ef36641fadee66c5de83ef3bdeebd5
             }
             
             // Handle pausing
