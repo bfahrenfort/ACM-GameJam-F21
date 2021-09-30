@@ -9,6 +9,10 @@ TagManager:
   - Top
   - Bottom
   - VCam
+  - Enemy
+  - EnemyRoom
+  - MovingBlock
+  - PlatformRoom
   layers:
   - Default
   - TransparentFX
