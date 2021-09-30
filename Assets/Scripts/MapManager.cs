@@ -17,6 +17,7 @@ namespace Custom
         {
             CurrentRoom = ListRooms[0];
             Instantiate(CurrentRoom);
+            //Platformer.Core.Simulation.Schedule<Platformer.Gameplay.PlayerSpawn>();
         }
 
         // Start is called before the first frame update

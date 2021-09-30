@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Custom
 {
-    public class TraverseNextRoom : MonoBehaviour
+    public class TraverseBottom : MonoBehaviour
     {
         void OnTriggerEnter2D(Collider2D collider)
         {
