@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Custom;
+using Unity.VisualScripting;
 
 namespace Custom
 {
@@ -16,8 +17,13 @@ namespace Custom
         private void Awake()
         {
             CurrentRoom = ListRooms[0];
+<<<<<<< HEAD
             Instantiate(CurrentRoom);
             //Platformer.Core.Simulation.Schedule<Platformer.Gameplay.PlayerSpawn>();
+=======
+            Room mainRoom = Instantiate(CurrentRoom);
+            mainRoom.AddComponent<MainConsequence>();
+>>>>>>> c10f34c0c60dab39aca51f1cf9bdf98338eee468
         }
 
         // Start is called before the first frame update
