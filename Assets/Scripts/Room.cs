@@ -22,8 +22,8 @@ namespace Custom
             Player = GameObject.FindGameObjectWithTag("Player");
             controller = Player.GetComponent<PlayerController>();
             //GameObject.FindGameObjectWithTag("VCam").GetComponent<Cinemachine.CinemachineConfiner>().m_BoundingShape2D = this.GetComponentInChildren<PolygonCollider2D>();
-            //GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().model.spawnPoint = 
-            //    this.GetComponentInChildren<SpawnPoint>().transform; // This is dumb
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().model.spawnPoint = 
+                this.GetComponentInChildren<SpawnPoint>().transform; // This is dumb
             consequence = GetComponent<IConsequence>();
         }
 

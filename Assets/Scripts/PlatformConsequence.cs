@@ -9,7 +9,7 @@ namespace Custom
         {
             foreach (Transform child in GameObject.FindWithTag("PlatformRoom").transform)
             {
-                child.GetComponent<BlockController>().RandomizeBlock();
+                //child.GetComponent<BlockController>().RandomizeBlock();
             }
         }
     }
