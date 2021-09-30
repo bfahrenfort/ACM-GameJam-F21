@@ -12,9 +12,10 @@ namespace Platformer.Mechanics
     /// </summary>
     public class DeathZone : MonoBehaviour
     {
-        void OnTriggerEnter2D(Collider2D collider)
+        public Collider2D col;
+        void OnTriggerEnter2D(Collider2D c)
         {
-            var p = collider.gameObject.GetComponent<PlayerController>();
+            var p = c.gameObject.GetComponent<PlayerController>();
             if (p != null)
             {
                 var ev = Schedule<PlayerEnteredDeathZone>();

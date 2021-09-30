@@ -5,7 +5,7 @@ namespace Custom
 {
     public class PlatformConsequence : MonoBehaviour, IConsequence
     {
-        public void Execute(PlayerController player)
+        public void Execute(PlayerController controller)
         {
             foreach (Transform child in GameObject.FindWithTag("PlatformRoom").transform)
             {
