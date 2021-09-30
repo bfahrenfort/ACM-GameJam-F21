@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,28 +10,19 @@ namespace Custom
     public class MapManager : MonoBehaviour
     {
         [Tooltip("List of rooms and element 0 must be starting room")]
-        public Room[] ListRooms;
-        private Room CurrentRoom { get; set; }
+        public List<GameObject> listRooms;
 
-        public int NumRooms() { return ListRooms.Length;}
+        public List<String> roomCodes = new List<string>();
+
+        public int NumRooms() { return listRooms.Count;}
 
         private void Awake()
         {
-            CurrentRoom = ListRooms[0];
-            Room mainRoom = Instantiate(CurrentRoom);
+            // Put the main room at the origin
+            GameObject mainRoom = Instantiate(listRooms[0], new Vector3(), Quaternion.identity);
+            roomCodes.Insert(0, "MainRoom");
+            // Give it the specific script it needs
             mainRoom.AddComponent<MainConsequence>();
-        }
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            
         }
     }
 }
