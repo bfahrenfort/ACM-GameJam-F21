@@ -8,6 +8,7 @@ namespace Custom
 {
     public class TraverseLeft: MonoBehaviour
     {
+        private bool created = false;
         private MapManager map;
 
         void Awake()
@@ -16,28 +17,32 @@ namespace Custom
         }
         void OnTriggerEnter2D(Collider2D c)
         {
-            Platformer.Model.PlatformerModel model = Platformer.Core.Simulation.GetModel<Platformer.Model.PlatformerModel>();
-            // Instantiate room
-            //model.player.Teleport(model.spawnPoint.position);
-            if (map.roomCodes.Contains("EnemyRoom"))
+            if (!created)
             {
-                Platform();
-            }
-            else if (map.roomCodes.Contains("PlatformRoom"))
-            {
-                Enemy();
-            }
-            else
-            {
-                // Randomize room
-                var random = new System.Random();
-                if (random.Next(0, 2) == 1)
+                created = true;
+                Platformer.Model.PlatformerModel model = Platformer.Core.Simulation.GetModel<Platformer.Model.PlatformerModel>();
+                // Instantiate room
+                //model.player.Teleport(model.spawnPoint.position);
+                if (map.roomCodes.Contains("EnemyRoom"))
+                {
+                    Platform();
+                }
+                else if (map.roomCodes.Contains("PlatformRoom"))
                 {
                     Enemy();
                 }
                 else
                 {
-                    Platform();
+                    // Randomize room
+                    var random = new System.Random();
+                    if (random.Next(0, 2) == 1)
+                    {
+                        Enemy();
+                    }
+                    else
+                    {
+                        Platform();
+                    }
                 }
             }
         }
