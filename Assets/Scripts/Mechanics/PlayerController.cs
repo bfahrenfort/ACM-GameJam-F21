@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
@@ -46,6 +47,7 @@ namespace Platformer.Mechanics
         public GameObject pauseMenu;
         private GameObject menu;
         public bool menuShown;
+        public Text time;
 
         public Bounds Bounds => collider2d.bounds;
 
@@ -62,11 +64,24 @@ namespace Platformer.Mechanics
         {
             // Handle timer
             timer -= Time.deltaTime;
+            time.text = ((int) timer).ToString(CultureInfo.InvariantCulture);
+            if (timer < 10)
+            {
+                time.color = Color.red;
+            }
+            else
+            {
+                time.color = Color.white;
+            }
             if (timer < 0)
             {
+<<<<<<< HEAD
                 // Kill player
                 Schedule<PlayerDeath>();
                 timer = 60;
+=======
+                Schedule<PlayerDeath>();
+>>>>>>> a11ed29193ef36641fadee66c5de83ef3bdeebd5
             }
             
             // Handle pausing
